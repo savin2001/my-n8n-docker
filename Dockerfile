@@ -1,8 +1,8 @@
 FROM n8nio/n8n:latest
 
-# Expose port
+# The n8n image already exposes port 5678, but it's good practice
+# to declare it for clarity and for services like Render.
 EXPOSE 5678
 
-# Start n8n using npm run start, which is how n8n is typically designed to be run
-# within its official Docker image, ensuring the environment is correctly set up.
-CMD ["npm", "run", "start"]
+# No CMD is needed. The base image's default CMD will be used,
+# which correctly starts the n8n application.
