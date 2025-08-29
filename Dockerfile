@@ -1,10 +1,8 @@
 FROM n8nio/n8n:latest
 
-# No need to mkdir, it's already there
-# RUN mkdir /home/node/.n8n
-
 # Expose port
 EXPOSE 5678
 
-# Start n8n
-CMD ["n8n", "start"]
+# Start n8n using npm run start, which is how n8n is typically designed to be run
+# within its official Docker image, ensuring the environment is correctly set up.
+CMD ["npm", "run", "start"]
