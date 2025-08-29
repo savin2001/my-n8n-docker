@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    plan: free
+    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: GENERIC_TIMEZONE
+        value: Africa/Nairobi
+      - key: WEBHOOK_URL
+        value: https://n8n-yourapp.onrender.com/ # will be your Render domain
+      - key: N8N_HOST
+        value: n8n-yourapp.onrender.com
+      - key: N8N_PORT
+        value: 5678
+      - key: N8N_PROTOCOL
+        value: https
